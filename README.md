@@ -6,3 +6,5 @@
 <p>Sistem Admin LTE 2
 <p>sislok.sql (dummy data)
 <p>Codeigniter 3
+
+Akun Login --> username : admin | password : admin
