@@ -7,11 +7,20 @@
 		"info": true,
 		"autoWidth": false
 	});
+	var MyTableCatatan = $('#list-data-catatan').dataTable({
+		"paging": true,
+		"lengthChange": false,
+		"searching": true,
+		"ordering": true,
+		"info": false,
+		"autoWidth": false
+	});
 
 	window.onload = function() {
 		
 		tampilPerangkat();
 		tampilCust();
+		tampilCatatan();
 		<?php
 		if ($this->session->flashdata('msg') != '') {
 			echo "effect_msg();";
@@ -21,6 +30,7 @@
 
 	function refresh() {
 		MyTable = $('#list-data').dataTable();
+		MyTableCatatan = $('#list-data-catatan').dataTable();
 	}
 
 	function effect_msg_form() {
@@ -66,7 +76,7 @@
 			})
 			.done(function(data) {
 				$('#konfirmasiHapus').modal('hide');
-				tampilKota();
+				tampilCatatan();
 				$('.msg').html(data);
 				effect_msg();
 			})
@@ -175,7 +185,7 @@
 			.done(function(data) {
 				var out = jQuery.parseJSON(data);
 
-				tampilKota();
+				tampilPerangkat();
 				if (out.status == 'form') {
 					$('.form-msg').html(out.msg);
 					effect_msg_form();
@@ -240,7 +250,7 @@
 			.done(function(data) {
 				var out = jQuery.parseJSON(data);
 
-				tampilKota();
+				tampilCust();
 				if (out.status == 'form') {
 					$('.form-msg').html(out.msg);
 					effect_msg_form();
@@ -266,7 +276,7 @@
 			.done(function(data) {
 				var out = jQuery.parseJSON(data);
 
-				tampilPerangkat();
+				tampilCust();
 				if (out.status == 'form') {
 					$('.form-msg').html(out.msg);
 					effect_msg_form();
@@ -296,7 +306,7 @@
 			})
 			.done(function(data) {
 				$('#konfirmasiCust').modal('hide');
-				tampilKota();
+				tampilCust();
 				$('.msg').html(data);
 				effect_msg();
 			})

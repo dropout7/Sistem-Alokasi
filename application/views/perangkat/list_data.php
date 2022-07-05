@@ -8,8 +8,8 @@ foreach ($dataPerangkat as $prg) {
         <td><?php echo $prg->ip_address; ?></td>
         <td><?php echo $prg->bts; ?></td>
         <td class="text-center" style="min-width:230px;">
-            <button class="btn btn-danger konfirmasiHapus-Perangkat" data-id="<?php echo $prg->id; ?>" data-toggle="modal" data-target="#konfirmasiHapus"><i class="glyphicon glyphicon-remove-sign"></i> Delete</button>
-            <button class="btn btn-info detail-dataPerangkat" data-id="<?php echo $prg->id; ?>"><i class="glyphicon glyphicon-info-sign"></i> Detail</button>
+            <button class="btn btn-danger konfirmasiHapus-Perangkat" data-id="<?php echo $prg->id; ?>" data-toggle="modal" data-target="#konfirmasiHapus"><i class="glyphicon glyphicon-remove-sign"></i> </button>
+            <button class="btn btn-info detail-dataPerangkat" data-id="<?php echo $prg->id; ?>"><i class="glyphicon glyphicon-info-sign"></i> </button>
         </td>
     </tr>
 <?php

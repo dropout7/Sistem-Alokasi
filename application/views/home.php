@@ -65,18 +65,18 @@
         <h3 class="box-title">Input Catatan / Note<small><br><?php echo $timestamp;?></small></h3>
       </div>
       <div class="box-body">
-        <form id="form-tambah-catatan" action="<?php echo base_url('Catatan/prosesTambah') ?>" method="POST">
+        <form action="<?php echo base_url('Catatan/prosesTambah') ?>" method="POST">
           <div class="col-lg-12">
             <input type="text" class="form-control" name="judul" value="" placeholder="Judul Note"><br>
             <input type="hidden" class="form-control" name="waktu" value="<?php echo $timestamp;?>" >
-            <textarea name="detail" placeholder="Detail Catatan" rows="5" cols="auto" maxlength="200"></textarea>
+            <textarea class="form-control" name="detail" placeholder="Detail Catatan" rows="5" cols="auto" maxlength="200"></textarea>
             <br>
-            
             <br>
+          </div>
             <div class="col-md-6">
               <button type="submit" class="form-control btn btn-warning"> <i class="glyphicon glyphicon-"></i> Post >></button>
             </div>
-          </div>
+          
         </form>
       </div>
     </div>
@@ -129,7 +129,7 @@
         </div>
       </div>
       <div class="box-body">
-          <table id="list-data" class="table table-bordered table-striped">
+          <table id="list-data-catatan" class="table table-bordered table-striped">
               <thead>
                   <tr>
                       <!-- <th>#</th> -->
@@ -145,19 +145,20 @@
                 ?>
                     <tr>
                         <!-- <td><?php echo $no; ?></td> -->
-                        <td><?php echo $catat->judul; ?><small>
+                        <td ><?php echo $catat->judul; ?><small>
                           <p style="color:grey"><?php echo $catat->waktu; ?></p></small>
                           <?php
                             $stt = $catat->status;
                             if ($stt != '1'){?>
-                              <input type="checkbox" value="" disabled>
+                              <!-- <input type="checkbox" value="" disabled> -->
                           <?php } else {?>
-                              <input type="checkbox" value="" checked disabled>
+                              <!-- <input type="checkbox" value="" checked disabled> -->
+                              <button style="font-size: 10px;" class="btn-xs btn-flat btn-success" disabled>finish</button>
                           <?php }?>
                         </td>
                         <td><?php echo $catat->detail; ?></td>
                         <td>
-                          <?php echo anchor('Catatan/delete/'.$catat->id,'Delete'); ?>
+                          <?php echo anchor('Catatan/delete/'.$catat->id,'Delete'); ?> | 
                           <?php
                             $stt = $catat->status;
                             if ($stt != '1'){
@@ -189,7 +190,7 @@
         </div>
       </div>
       <div class="box-body">
-          <table id="list-data" class="table table-bordered table-striped">
+          <table id="" class="table table-bordered table-striped">
               <thead>
                   <tr>
                       <th>#</th>
@@ -225,13 +226,11 @@
         <i class="fa fa-"></i>
         <h3 class="box-title">List Perangkat<small><br></small></h3>
         <div class="box-tools pull-right">
-          <!-- <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-          </button>  -->
           <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
         </div>
       </div>
       <div class="box-body">
-          <table id="list-data" class="table table-bordered table-striped">
+          <table id="" class="table table-bordered table-striped">
               <thead>
                   <tr>
                       <th>#</th>

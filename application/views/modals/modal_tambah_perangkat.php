@@ -4,33 +4,36 @@
     <h3 style="display:block; text-align:center;">Tambah Data Perangkat</h3>
 
     <form id="form-tambah-perangkat" method="POST">
-        <div class="input-group form-group">
-            <span class="input-group-addon" id="sizing-addon2">
-                <i class="glyphicon glyphicon-user"></i>
+        <div class="input-group form-control">
+            <span class="input-group-addon" >
+                <i class="glyphicon glyphicon-hdd"></i>
             </span>
-            <input type="text" class="form-control" placeholder="Perangkat" name="nama" aria-describedby="sizing-addon2">
+            <input type="text" class="form-control" placeholder="Perangkat" name="nama" >
         </div>
-        <div class="input-group form-group">
-            <span class="input-group-addon" id="sizing-addon2">
-                <i class="glyphicon glyphicon-user"></i>
+        <div class="input-group form-control">
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-globe"></i>
             </span>
-            <input type="text" class="form-control" placeholder="IP" name="ip_address" aria-describedby="sizing-addon2">
+            <input type="text" class="form-control" placeholder="IP" name="ip_address" >
         </div>
-        <div class="input-group form-group">
-          <select name="bts" id="bts">
-                <option value="====" selected>==pilih BTS==</option>
-                <option value="tnmas">Tanah Mas </option>
-                <option value="wai">Ngesrep </option>
-                <option value="bukit">Bukit </option>
+        <div class="input-group form-control">
+            <span class="input-group-addon" >
+                <i class="glyphicon glyphicon-tower"></i>
+            </span>
+          <select class=" form-control" name="bts" id="bts">
+                <option value="====" selected>=== Site BTS (Tower) ===</option>
+                <option value="Tanah Mas Site">Tanah Mas Site</option>
+                <option value="Waikiki Site">Waikiki Site </option>
+                <option value="Bukit Site">Bukit Site</option>
           </select>
         </div>
         <div class="input-group form-group">
-            <span class="input-group-addon" id="sizing-addon2">
-                Detail (SSID,Freq, dll)
+            <span class="input-group-addon" >
+                Detail <p>(SSID,Freq, dll)</p>
             </span>
+            <textarea class="input-group form-control" name="detail" placeholder="SSID,Freq, dll" rows="4" cols="40" maxlength="400" >SSID : &#13;&#10;Frequency : &#13;&#10;Lainnya : </textarea>
         </div>
-        <div class="input-group">
-          <textarea name="detail" placeholder="SSID,Freq, dll" rows="4" cols="40" maxlength="100"></textarea>
+        <div class="input-group form-control">
         </div>
         <br><br>
         <div class="form-group">

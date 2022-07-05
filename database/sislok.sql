@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2022 at 02:25 PM
+-- Generation Time: Jul 05, 2022 at 12:03 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cendana`
+-- Database: `sislok`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `foto`) VALUES
-(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Mesut ', 'profil2.jpg');
+(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Mesut ', '');
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,8 @@ INSERT INTO `catatan` (`id`, `judul`, `detail`, `waktu`, `status`) VALUES
 (100, 'Pergantian Panel Box', 'Lokasi Oceanco Bukit\r\npanelbox ganti yang lebih besar', '2022-07-03 20:09:00', '0'),
 (965, 'Mapping Network Pandu Logistic', '- Kabel 10m\r\n- Switch 8 Port\r\n- Pergantian litebeam kantor depan\r\n- Crimping 8 titik kabel', '2022-07-03 19:35:09', '1'),
 (967, 'Ganti Groove 26.150', 'Ngesrep user MIC', '2022-07-03 23:03:42', ''),
-(968, 'Pengecekan IP CCTV Pandu', 'Pagi jam 9, dengan teknisis CCTV', '2022-07-04 14:44:00', '');
+(968, 'Pengecekan IP CCTV Pandu', 'Pagi jam 9, dengan teknisis CCTV', '2022-07-04 14:44:00', ''),
+(969, 'Cek CCTV dan Fingerprint Pandu', 'fingerprint tidak terdetek, cctv tidak bisa diremote', '2022-07-05 15:13:54', '');
 
 -- --------------------------------------------------------
 
@@ -86,13 +87,10 @@ CREATE TABLE `cust` (
 --
 
 INSERT INTO `cust` (`id`, `nama`, `ip_publik`, `detail`, `status`) VALUES
-(2, 'LSM', '114.30.81.84', 'd', 'Aktif'),
-(21, 'PT ABADI NAN JAYA', '10.10.10.111', 'nothing', 'Aktif'),
-(22, 'PT DISANA LAHIR BETAs', '29.20.29.11ss', 'nothing', 'Aktif'),
-(273, 'Growell', '114.30.81.85', 's', 'Aktif'),
-(507, 'OSA', '114.30.81.62', 'd', 'Aktif'),
-(508, 'Mr.Park', '114.30.81.91', 's', 'Aktif'),
-(2147483647, 'PT COCA COLA', '10.10.10.22', 'DIcoba Lorem Ipsum', 'Aktif');
+(70, 'Home Ozakiel', '113.30.11.44', 'Alamat : Jl. Bledugkuwu 88\r\nSSID : ozakielzz\r\nFrequency : 4990\r\nLainnya : Putus', 'OFF'),
+(75, 'PT GROWTH YOUTH', '113.40.90.2', 'Alamat : Jl. Kepintaran Wes ewes\r\nSSID : growth angkasa\r\nFrequency :  5120\r\nLainnya : -', 'Aktif'),
+(89144, 'PT LTM', '113.30.30.10', 'Alamat : Jl. SimpangSiyur No.101\r\nSSID : ltm-oke\r\nFrequency : 5910\r\nLainnya : -', 'Aktif'),
+(2147483647, 'PT. Sea Wood Northwest', '113.40.20.22', 'Alamat : Jl. Ibu Kita Apa\r\nSSID : seawoodss\r\nFrequency : 5880\r\nLainnya : -', 'OFF');
 
 -- --------------------------------------------------------
 
@@ -104,8 +102,8 @@ CREATE TABLE `perangkat` (
   `id` int(64) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `ip_address` varchar(50) NOT NULL,
-  `detail` varchar(100) NOT NULL,
-  `bts` varchar(20) NOT NULL
+  `detail` text NOT NULL,
+  `bts` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -113,16 +111,9 @@ CREATE TABLE `perangkat` (
 --
 
 INSERT INTO `perangkat` (`id`, `nama`, `ip_address`, `detail`, `bts`) VALUES
-(4, 'PBE', '10.159.26.220', 'BUKIT ESCE 5120', 'bukit'),
-(5, 'Rocket M5', '10.159.26.83', 'tan-2-oce123 5720', 'tnmas'),
-(7, 'DynaDish', '10.159.26.209', '4965\r\n', 'wai'),
-(77, 'DynaDish', '10.159.26.211', 'PTP-GOR-TM 4975', 'tnmas'),
-(94, 'RB433', '10.159.26.11', 's', 'bukit'),
-(700, 'PowerBeam M5 400', '10.159.26.13', 'LLOcean 5060', 'tnmas'),
-(8197, 'RB433', '10.159.26.160', 'RUDAL-LANGIT 5010', 'bukit'),
-(17508, 'Groove', '10.159.26.170', 'HONDA QU 5325', 'bukit'),
-(52057, 'RB433', '10.159.26.60', 'pak_jenggot 4930\r\nANAK PANTAI 2437\r\n\r\nOsa', 'tnmas'),
-(2147483647, 'PBE Gen2', '10.159.26.15', 'OC LANGIT 5870', 'tnmas');
+(2, 'DynaDIsh', '10.100.20.10', 'SSID : wai-20\r\nFrequency : 5010\r\nLainnya : backbone', 'GOR Site'),
+(5, 'Groove', '10.100.20.25', 'SSID : wai-25\r\nFrequency : 5880\r\nLainnya : ', 'Tanah Mas Site'),
+(2147483647, 'Rocket M5', '10.100.20.90', 'SSID : rocket-90\r\nFrequency : 4920\r\nLainnya : backbone', 'Bukit Site');
 
 --
 -- Indexes for dumped tables
@@ -166,7 +157,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `catatan`
 --
 ALTER TABLE `catatan`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=969;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=970;
 
 --
 -- AUTO_INCREMENT for table `cust`

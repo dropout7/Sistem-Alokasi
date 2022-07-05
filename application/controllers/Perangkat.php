@@ -66,9 +66,10 @@ class Perangkat extends AUTH_Controller
 
     public function prosesTambah()
     {
-        $this->form_validation->set_rules('nama', 'Perangkat', 'trim|required');
+        $this->form_validation->set_rules('nama', 'Customer', 'trim|required');
         $this->form_validation->set_rules('ip_address', 'IP', 'trim|required');
         $this->form_validation->set_rules('detail', 'Detail', 'trim|required');
+        $this->form_validation->set_rules('bts', 'bts', 'trim|required');
 
         $data = $this->input->post();
         if ($this->form_validation->run() == TRUE) {

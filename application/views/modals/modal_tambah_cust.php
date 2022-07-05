@@ -5,28 +5,27 @@
     <div class="col-md-offset-1 col-md-10 col-md-offset-12 well">
         <form id="form-tambah-cust" method="POST">
             <input type="hidden" name="id" value="">
-                <div class="input-group form-group">
+            <div class="input-group form-group form-control">
                     <p>Nama</p>
                 <input type="text" class="form-control" name="nama" placeholder="Customer" aria-describedby="sizing-addon2" value="">
             </div>
-                <div class="input-group form-group">
+            <div class="input-group form-group form-control">
                     <p>IP Publik</p>
                 <input type="text" class="form-control" name="ip_publik" aria-describedby="sizing-addon2" value="" placeholder="IP Publik">
             </div>
-            <div class="input-group form-group">
-            <select name="status" id="status">
-                    <option value="====" selected>==Status==</option>
+            <div class="input-group form-group form-control">
+            <p>Status</p>
+            <select name="status" id="status" class="input-group form-group form-control">
+                    <option value="====" selected>== Status ==</option>
                     <option value="Aktif">Active </option>
                     <option value="OFF">Unactive </option>
             </select>
             </div>
-            <div class="form-group">
             <span class="input-group-addon" id="sizing-addon2">
-                Detail
+                Detail <p>(Alamat, SSID,Freq, dll)</p>
             </span>
-            </div>
             <div class="input-group form-group">
-            <textarea name="detail" placeholder="Deskripsi, contoh : SSID , Frequensi, dsj" rows="auto" cols="auto" maxlength="100"></textarea>
+            <textarea class="input-group form-control" name="detail" placeholder="SSID,Freq, dll" rows="4" cols="40" maxlength="100" >Alamat : &#13;&#10;SSID : &#13;&#10;Frequency : &#13;&#10;Lainnya : </textarea>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
