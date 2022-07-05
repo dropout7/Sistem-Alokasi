@@ -1,4 +1,4 @@
-Sistem-Alokasi
+##Sistem-Alokasi
 Sistem Pengelolaan Data Internal Kantor
 
 Sistem diperuntukkan untuk internal kantor guna memfasilitasi pengolahan data baik berupa perangkat atau alat, data pelanggan, dan data catatan atau note untuk keperluan pengerjaan kegiatan jadwal di kantor.
